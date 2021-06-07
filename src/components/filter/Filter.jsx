@@ -6,6 +6,7 @@ import "./Filter.css";
 /**
  * @class Filter
  * @classdesc component to display filters by name, category or projects
+ * this component will also manage all publication showned
  */
 
 class Filter extends PureComponent {
@@ -70,20 +71,22 @@ class Filter extends PureComponent {
             value={title}
             onKeyDown={this.onKeyDown}
           />
-          {category.length && (
-            <FilterTypes
-              title="Category"
-              items={category}
-              onFilter={this.onFilterCategory}
-            />
-          )}
-          {projects.length && (
-            <FilterTypes
-              title="Project"
-              items={projects}
-              onFilter={this.onFilterProject}
-            />
-          )}
+          <div className="filter-types">
+            {category.length && (
+              <FilterTypes
+                title="Category"
+                items={category}
+                onFilter={this.onFilterCategory}
+              />
+            )}
+            {projects.length && (
+              <FilterTypes
+                title="Project"
+                items={projects}
+                onFilter={this.onFilterProject}
+              />
+            )}
+          </div>
         </div>
         <Publication publications={filteredPublications || publications} />
       </Fragment>
