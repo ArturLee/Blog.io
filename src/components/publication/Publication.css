@@ -10,19 +10,19 @@
   box-shadow: 0 1px 3px 1px rgb(213, 216, 226), 0 4px 8px 1px rgb(213, 216, 226);
   display: flex;
   flex-direction: row;
-  padding: 12px;
   height: 100px;
-  width: 700px;
   margin-bottom: 20px;
+  padding: 12px;
+  width: 700px;
 }
 
 .publication .info {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   padding: 0 0 0 10px;
-  width: 100%;
   text-align: start;
+  width: 100%;
 }
 
 .publication .info .title {

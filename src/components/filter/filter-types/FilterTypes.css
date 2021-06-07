@@ -1,15 +1,19 @@
 .filter-types .select {
   cursor: pointer;
+  padding: 0 45px 0 45px;
+  text-align: start;
 }
 
 .filter-types .title {
-  margin-top: 20px;
   color: rgb(180, 180, 180);
+  margin-top: 30px;
+  padding: 0 45px 0 45px;
+  text-align: start;
 }
 
 @media only screen and (max-width: 1250px) {
   .filter-types .select {
     cursor: pointer;
-    padding: 14px;
+    padding: 20px;
   }
 }

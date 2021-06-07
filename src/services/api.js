@@ -17,7 +17,7 @@ export const getToken = async () => {
     });
     return response.data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
@@ -38,7 +38,7 @@ export const getProjects = async (token) => {
     });
     return response.data;
   } catch (error) {
-    console.error(error);
+    return error;
   }
 };
 

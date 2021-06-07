@@ -1,3 +1,4 @@
+import React from "react";
 import "./FilterTypes.css";
 
 /**
@@ -15,7 +16,7 @@ function FilterTypes({ title, items, onFilter }) {
           const select = () => onFilter(item);
           return (
             <p className="select" onClick={select} key={item.id}>
-              {item.name || 'others'}
+              {item.name || "others"}
             </p>
           );
         })}

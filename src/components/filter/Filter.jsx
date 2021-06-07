@@ -10,11 +10,13 @@ import "./Filter.css";
  */
 
 class Filter extends PureComponent {
-  state = {
-    title: "",
-    filteredPublications: null,
-    category: null,
-  };
+  constructor() {
+    super();
+    this.state = {
+      title: "",
+      filteredPublications: null,
+    };
+  }
 
   onFilterProject = (value) => {
     const { publications } = this.props;
@@ -69,22 +71,20 @@ class Filter extends PureComponent {
             value={title}
             onKeyDown={this.onKeyDown}
           />
-          <div className="filter-types">
-            {category.length && (
-              <FilterTypes
-                title="Category"
-                items={category}
-                onFilter={this.onFilterCategory}
-              />
-            )}
-            {projects.length && (
-              <FilterTypes
-                title="Project"
-                items={projects}
-                onFilter={this.onFilterProject}
-              />
-            )}
-          </div>
+          {category.length && (
+            <FilterTypes
+              title="Category"
+              items={category}
+              onFilter={this.onFilterCategory}
+            />
+          )}
+          {projects.length && (
+            <FilterTypes
+              title="Project"
+              items={projects}
+              onFilter={this.onFilterProject}
+            />
+          )}
         </div>
         <Publication publications={filteredPublications || publications} />
       </Fragment>

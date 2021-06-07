@@ -23,7 +23,8 @@ function App() {
             allCategory.push(publication.category)
         );
 
-        // this will reduce all categories into array of objects, will be usefull to create the filters
+        // this will reduce all categories into array of objects,
+        // will be usefull to create the filters.
         const categories = allCategory.reduce((categoryList, name, index) => {
           categoryList.push({ id: index, name });
           return categoryList;
