@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Blog.io App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instructions to run the project
 
-## Available Scripts
+Once you've cloned or downloaded the project, navigate to it's folder and run the following commands in a terminal:
+```
+npm install
+```
 
-In the project directory, you can run:
+Before you strat, it's required to add the `clientId` and `clientSecret` keys in order to get the authorization token.
+this variables are located at `./src/services/config.js`
 
-### `npm start`
+```
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The project will start in development mode, and you'll be able to access it on this url: [http://localhost:3000](http://localhost:3000)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Run tests
 
-### `npm test`
+To run the tests I've written, run the following commands:
+```
+npm run test
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About
 
-### `npm run build`
+The goal of this project is to create a “Proof of Concept” a page/application that showcases display, filter and search functionalities for the created content. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Due to the size of this project, I've decided just to use React with hooks. However, if this project were to get further developed and the component and code complexity increased, using a more robust state management together with the hooks would be a must.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In `App.js` you can find the most of the state management which is then used in all the main components render and api requests.
+Since the number of api request are limited to 1k per hour, I decided to get all the data at once.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Most of the request logic are in the `api.js`, located in `./src/services`. There you will find more documentation about how the request are made.
 
-### `npm run eject`
+It is also important to mention that `Filter` component, located inside `./src/component/filters`, handles what is showned on the published articles/case study/brochures/ebooks component.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+There was few things that I missed, such as pagination for all published articles. I would've love to do more animation and testing.
+It would've been nicer to implente it with scss, I find it easier to manage all the variables such as colors mixins and etc.
