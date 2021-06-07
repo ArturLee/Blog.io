@@ -4,10 +4,10 @@ import { configJson } from "./config";
 const { oauthUrl, projectsUrl, publicationsUrl, clientId, clientSecret } =
   configJson;
 
-  /**
-   * get auth token
-   * @returns token
-   */
+/**
+ * get auth token
+ * @returns token
+ */
 export const getToken = async () => {
   try {
     const response = await axios.post(oauthUrl, {
@@ -86,7 +86,6 @@ export const getAllPublications = async (token) =>
               if (_links.self.href !== _links.last.href) {
                 getEdition(response.data._links.next.href);
               } else {
-                console.log("edition", edition);
                 resolve(edition);
               }
             });

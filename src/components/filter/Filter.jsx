@@ -25,7 +25,6 @@ class Filter extends PureComponent {
   };
 
   onFilterCategory = (value) => {
-    console.log(value);
     const { publications } = this.props;
     const filtered = publications.filter(
       (item) => item.category === value.name
@@ -49,7 +48,6 @@ class Filter extends PureComponent {
   onKeyDown = (event) => {
     const { title } = this.state;
     if (event.key === "Enter" || event.key === "NumpadEnter") {
-      console.log("enter", title);
       event.preventDefault();
       this.onTitleSearch(title);
     }
@@ -58,7 +56,7 @@ class Filter extends PureComponent {
   render() {
     const { category, projects, publications } = this.props;
     const { title, filteredPublications } = this.state;
-    console.log(category);
+
     return (
       <Fragment>
         <div className="filter">
